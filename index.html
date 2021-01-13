@@ -8,9 +8,440 @@
       rel="stylesheet"
       href="https://volodymyrkushnir.com/assets/stylesheets/base.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"
+    />
+    <style>
+      ul.contacts {
+        flex-direction: row;
+      }
+
+      .hidden-list {
+        display: none;
+      }
+      .hidden-list:target {
+        display: block;
+      }
+      /* .hidden-list:hover {
+        display: block;
+      } */
+    </style>
     <title>Résumé</title>
   </head>
   <body>
-    ― Hello World! &#x1F609;
+    <main>
+      <article>
+        <div class="page" style="border-color: midnightblue">
+          <div class="stackable grid">
+            <div class="row">
+              <div class="three wide center aligned column">
+                <!-- Avatar -->
+                <div class="avatar-wrapper">
+                  <object
+                    class="avatar"
+                    data="data:image/jpeg;base64,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"
+                    role="img"
+                    aria-label="My profile picture"
+                  ></object>
+                </div>
+              </div>
+              <div class="thirteen wide column">
+                <div class="stackable grid">
+                  <div class="sixteen wide column">
+                    <h1 class="name">Ryu Hoshi</h1>
+                    <!-- <div class="job">First class fighter</div> -->
+                    <ul class="contacts">
+                      <li>
+                        <a
+                          href="mailto:ryuwins@gmail.com"
+                          rel="author"
+                          class="mail"
+                        >
+                          <i
+                            class="fa fa-envelope-o fa-2x"
+                            aria-hidden="true"
+                          ></i>
+                          <span> ryuwins@gmail.com</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="https://twitter.com/denjinryu"
+                          rel="author"
+                          class="mail"
+                          ><i class="fa fa-twitter fa-2x"></i
+                          ><span> twitter.com/denjinryu</span></a
+                        >
+                      </li>
+
+                      <li>
+                        <a
+                          href="https://www.instagram.com/sworn_ryu/"
+                          rel="author"
+                          class="mail"
+                          ><i
+                            class="fa fa-instagram fa-2x"
+                            aria-hidden="true"
+                          ></i
+                          ><span> instagram.com/sworn_ryu</span></a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="sixteen wide mobile only column">
+                    <div class="divider"></div>
+                  </div>
+                  <div class="sixteen wide column">
+                    <h2>Résumé</h2>
+                    <p>
+                      My name is Ryu Hoshi. I am a first class street fighter
+                      for 40 years.
+                    </p>
+                    <p style="opacity: 0.75">
+                      <strong style="margin-right: 0.0625em">*</strong>I love
+                      fights. It's my passion, but also I like cats and rabbits.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="sixteen wide column">
+                <div class="fat divider"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="ten wide column">
+                <!-- Timeline -->
+
+                <h3>FIGHT CAREER</h3>
+                <ul class="timeline">
+                  <li>
+                    <em>2010s</em>
+                    <ul>
+                      <li>
+                        United with unknown until then to me Power Rangers to
+                        defeat resurrected M.Bison.
+                      </li>
+                      <li>
+                        Damn good fighters they are, even not knowing karate
+                        ways!
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <em>2000s</em>
+                    <ul>
+                      <li>
+                        Borrowed my famous ripped gi to Soki in
+                        <strong
+                          ><a
+                            href="https://en.wikipedia.org/wiki/Onimusha:_Dawn_of_Dreams"
+                            rel="external"
+                            >"Onimusha: Dawn of Dreams"</a
+                          ></strong
+                        >, gods informed me he needed that for the battle.
+                      </li>
+                      <li>
+                        My evil alter ego sneaked out of control and became a
+                        boss in
+                        <strong
+                          ><a
+                            href="https://en.wikipedia.org/wiki/Street_Fighter_IV"
+                            rel="external"
+                            >"Street Fighter IV"</a
+                          ></strong
+                        >.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <em>1990s</em>
+                    <ul>
+                      <li>
+                        Was promoted to
+                        <strong
+                          ><a
+                            href="https://en.wikipedia.org/wiki/Street_Fighter_II"
+                            rel="external"
+                            >"Street Fighter II"</a
+                          ></strong
+                        >.
+                      </li>
+                      <li>
+                        Didn't stay there for long, celebrations and office
+                        dwelling is not for me!
+                      </li>
+                      <li>
+                        Kept fighting in
+                        <strong
+                          ><a
+                            href="https://streetfighter.fandom.com/wiki/Street_Fighter_Alpha:_Warriors%27_Dreams"
+                            rel="external"
+                            >"Street Fighter Alpha: Warriors' Dreams".</a
+                          ></strong
+                        >
+                      </li>
+                      <li>
+                        Took care of villainous <strong>Akuma</strong> in
+                        <strong
+                          ><a
+                            href="https://en.wikipedia.org/wiki/Street_Fighter_Alpha_2"
+                            rel="external"
+                            >"Street Fighter Alpha 2"</a
+                          ></strong
+                        >.
+                      </li>
+                      <li>
+                        As a freelance on
+                        <strong
+                          ><a
+                            href="https://en.wikipedia.org/wiki/Super_Puzzle_Fighter_II_Turbo"
+                            rel="external"
+                            >"Super Puzzle Fighter II Turbo"</a
+                          ></strong
+                        >
+                        tried myself in a new genre, puzzle games. Let the wrath
+                        of seven heavens come upon these malicious enigmas,
+                        never again
+                      </li>
+
+                      <li>
+                        Reunited with <strong>Ken</strong>, my friend and
+                        opponent in
+                        <strong
+                          ><a
+                            href="https://en.wikipedia.org/wiki/Street_Fighter_III"
+                            >"Street Fighter III"</a
+                          ></strong
+                        >. Men's friendship works mysteriously.Also helped with
+                        Arika project
+                        <strong
+                          ><a
+                            href="https://en.wikipedia.org/wiki/Street_Fighter_EX"
+                            rel="external"
+                            >"Street Fighter EX"</a
+                          ></strong
+                        >
+                      </li>
+                      <li>
+                        Defeated M. Bison in
+                        <strong
+                          ><a
+                            href="https://en.wikipedia.org/wiki/Street_Fighter_Alpha_2"
+                            rel="external"
+                            >"Street Fighter Alpha 2"</a
+                          ></strong
+                        >, bastard wanted to use my heroic body for his evil
+                        intentions, but retreated with shame.
+                      </li>
+                      <li>
+                        Also this year I encountered <em>Marvel</em> universe in
+                        <strong
+                          ><a
+                            href="https://en.wikipedia.org/wiki/Marvel_vs._Capcom:_Clash_of_Super_Heroes"
+                            rel="external"
+                            >"Marvel vs. Capcom: Clash of Super Heroes"</a
+                          ></strong
+                        >
+                        fighter, loyal to my employer, Capcom, of course.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <em>1980s</em>
+                    <ul>
+                      <li>
+                        Started working for Capcom project
+                        <strong
+                          ><a
+                            href="https://en.wikipedia.org/wiki/Street_Fighter"
+                            >"Street Fighter"</a
+                          ></strong
+                        >. My partner was Ken Masters, the boss'name was Sagat.
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+                <hr />
+                <h3>SCREEN CAREER</h3>
+                <ul class="timeline">
+                  <li>
+                    <em>2010s</em>
+                    <ul>
+                      <li>
+                        In
+                        <strong
+                          ><a
+                            href="https://en.wikipedia.org/wiki/Street_Fighter_V"
+                            rel="external"
+                            >"Street Fighter V"</a
+                          ></strong
+                        >
+                        once and for all erased M.Bison from earth and tamed my
+                        inner Evil Ryu.
+                      </li>
+                      <li>
+                        Also spent some time on a side-project, mini-series
+                        <strong
+                          ><a
+                            href="https://en.wikipedia.org/wiki/Street_Fighter:_Resurrection"
+                            rel="external"
+                            >"Street Fighter: Resurrection"</a
+                          ></strong
+                        >.
+                      </li>
+                      <li>
+                        Filmed in a martial arts tutorial
+                        <strong
+                          ><a
+                            href="https://en.wikipedia.org/wiki/Street_Fighter:_Assassin%27s_Fist"
+                            rel="external"
+                            >"Street Fighter: Assassin's Fist"</a
+                          ></strong
+                        >, revealing to audience forgotten art of Ansatsuken. *
+                        Amongst many fighters of the past was featured in the
+                        movie "Ready Player One". Ryu ready always!
+                      </li>
+                      <li>
+                        The gods of intenet concluded me in the animated movie
+                        <strong
+                          ><a
+                            href="https://en.wikipedia.org/wiki/Wreck-It_Ralph"
+                            rel="external"
+                            >"Wreck-It Ralph"</a
+                          ></strong
+                        >, but rewarded me with a good drink for it!
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <em>1990s</em>
+                    <ul>
+                      <li>
+                        Screened in a movie
+                        <strong
+                          ><a
+                            href="https://en.wikipedia.org/wiki/Street_Fighter_(1994_film)"
+                            rel="external"
+                            >"Street Fighter"</a
+                          ></strong
+                        >, so that the batllesof past would not be forgotten by
+                        millenial generation
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div class="six wide column">
+                <!-- LANGUAGES -->
+                <section>
+                  <h3>Languages</h3>
+                  <p class="tags small">
+                    <span class="language">🇨🇳 MANDARIN</span>
+
+                    <span class="language">🇯🇵 JAPANESE</span>
+
+                    <span class="language" lang="en"> 🇺🇸 ENGLISH</span>
+                  </p>
+                </section>
+                <hr />
+
+                <section>
+                  <h3>Education</h3>
+                  <p class="tags small">
+                    To live is to fight and to fight is to live. I started
+                    learning fighting at my master Gouken's castle, I was beaten
+                    at head way too often to remember when exactly.
+                  </p>
+                </section>
+                <hr />
+                <section>
+                  <a href="#achiv">
+                    <h3 class="header-list">ACHIEVEMENTS &#9757; (hover me)</h3>
+                  </a>
+                  <ul id="achiv" class="timeline hidden-list">
+                    <li>
+                      <p class="tags bulleted">
+                        &#128966;<strong> #1</strong> in "Top 25 Street Fighter
+                        Characters" by IGN, who also called me "fancy", "icon"
+                        and "a testament to the virtue of simplicity" ❤️
+                      </p>
+                    </li>
+                    <li>
+                      <p class="tags bulleted">
+                        &#128966;<strong> #2</strong> in "Top 20 Street Fighter
+                        Characters of All Time" by GameDaily, same council found
+                        me worth of #6 place in "Top 25 Capcom Characters of All
+                        Time", which I proudly share with my partner Ken
+                      </p>
+                    </li>
+                    <li>
+                      <p class="tags bulleted">
+                        <em
+                          >I was named "5th Most Powerful Street Fighter
+                          Character" by Screen Rant-san</em
+                        >
+                      </p>
+                    </li>
+                    <li>
+                      <p class="tags bulleted">
+                        &#128966;<strong> #71</strong> in "Top 100 Heroes of All
+                        Time" by UGO Networks, also recognized #2 in their list
+                        of "Top 50 Street Fighter Characters"
+                      </p>
+                    </li>
+                    <li>
+                      <p class="tags bulleted">
+                        &#128966; In a survey of <strong>4000</strong> online
+                        matches for <strong>Super Street Fighter IV</strong> , I
+                        got to be the most popular character, with 16.6% of
+                        players choosing my side
+                      </p>
+                    </li>
+                    <li>
+                      <a href="#"><em>hide...</em></a>
+                    </li>
+                  </ul>
+                </section>
+
+                <hr />
+                <section>
+                  <h3>Skills</h3>
+                  <p class="tags small">
+                    KARATE ENERGY ATTACK &#129354; SHORYUKEN WALKING BAREFOOT
+                    PLAYING VIDEOGAMES &#127828; DOING BURGERS MASHING POTATOES
+                    COPYWRITING ACTING VOICEOVERS CHARACTER NOBLE DIRECT BOLD
+                    CONFIDENT DARING SCHIZOPHRENIC DRAMATIC PERSUASIVE IMMEDIATE
+                    WISE LIFE LESSON
+                  </p>
+                </section>
+
+                <hr />
+                <section>
+                  <h3>Likes&#x1f603;</h3>
+                  <p class="tags small">
+                    GI VEGETABLES &#127345;LOOD SMALL MARSHMELLOWS RED COLOR
+                    KILLED ENEMY
+                  </p>
+                </section>
+
+                <p></p>
+                <hr />
+                <section>
+                  <h3>Dislikes&#x1f61e;</h3>
+                  <p class="tags small">
+                    BISONS GHOSTS SMARTPHONES SMELL OF SEAFOOD BARBER SHOPS
+                    SLEEVES WANTS BE FIT WRITE MORE BOOKS FIND A GIRLFRIEND TO
+                    GO TO CINEMA WITH KILL ALL OF AKUMA FAMILY
+                  </p>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </main>
   </body>
 </html>
